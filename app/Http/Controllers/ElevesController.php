@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ElevesController extends Controller
 {
+
+    public function index(){
+        // $eleves = Eleve::orderBy('created_at', 'desc')->paginate(5);
+        $eleves = Eleve::orderByDesc('created_at')->paginate(5);
+        return view('eleves.index', compact('eleves'));
+    }
     public function create(){
         return view('eleves.create');
     }
