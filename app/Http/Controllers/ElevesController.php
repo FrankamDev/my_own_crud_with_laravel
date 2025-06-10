@@ -28,6 +28,6 @@ class ElevesController extends Controller
         //enregistrer les donnees
 
         Eleve::create($request->all());
-        return back()->with('success', 'Élève créé avec succès !');
+        return redirect()->route('eleves.index')->with('success', 'Élève créé avec succès !');
     }
 }
