@@ -1,0 +1,14 @@
+<?php
+
+use App\Http\Controllers\ElevesController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/eleves/create', [ElevesController::class, 'create'])->name('eleves.create'); // Corrigé le nom pour cohérence
+Route::post('/eleves', [ElevesController::class, 'store'])->name('eleves.store');
