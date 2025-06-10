@@ -35,7 +35,7 @@
                 <td>
                     <a href="" class="btn btn-outline-warning">Voir</a>
                     <a href="" class="btn btn-outline-warning">Editer</a>
-                    <a href="" class="btn btn-outline-warning">Supprimer</a>
+                    <a href="" class="btn btn-outline-danger">Supprimer</a>
                 </td>
             </tr>
             @empty
@@ -46,8 +46,7 @@
         </tbody>
     </table>
 
-        {{ $eleves->links() }}
-
+        {{$eleves->links()}}
 
 </div>
 

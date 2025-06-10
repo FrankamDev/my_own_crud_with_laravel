@@ -5,7 +5,8 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6 offset-3">
-                
+                <h2>Ajouter un etudiant</h2>
+                <a href="{{ route('eleves.index') }}" class="btn btn-outline-warning mt-2">RETOUR</a>
                 <div class="card bg-dark text-white mt-4">
                     <div class="card-body border border-light rounded">
                         <form method="POST" action="{{ route('eleves.store') }}">
