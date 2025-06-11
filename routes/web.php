@@ -13,3 +13,5 @@ Route::get('/home', function () {
 Route::get('/eleves', [ElevesController::class, 'index'])->name('eleves.index');
 Route::get('/eleves/create', [ElevesController::class, 'create'])->name('eleves.create');
 Route::post('/eleves', [ElevesController::class, 'store'])->name('eleves.store');
+
+Route::get('/eleves/{id}', [ElevesController::class, 'show'])->name('eleves.show');

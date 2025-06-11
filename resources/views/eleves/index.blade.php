@@ -33,7 +33,10 @@
                 <td>{{$eleve->email}}</td>
                 <td>{{$eleve->phone}}</td>
                 <td>
-                    <a href="" class="btn btn-outline-warning">Voir</a>
+
+
+                    <a href="{{ route('eleves.show', $eleve->id) }}" class="btn btn-outline-warning">Voir</a>
+
                     <a href="" class="btn btn-outline-warning">Editer</a>
                     <a href="" class="btn btn-outline-danger">Supprimer</a>
                 </td>
