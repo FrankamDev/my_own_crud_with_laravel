@@ -15,3 +15,9 @@ Route::get('/eleves/create', [ElevesController::class, 'create'])->name('eleves.
 Route::post('/eleves', [ElevesController::class, 'store'])->name('eleves.store');
 
 Route::get('/eleves/{id}', [ElevesController::class, 'show'])->name('eleves.show');
+
+Route::delete('/eleves/{id}', [ElevesController::class, 'destroy'])->name('eleves.destroy');
+
+
+Route::get('/eleves/{id}/edit', [ElevesController::class, 'edit'])->name('eleves.edit');
+Route::put('/eleves/{id}', [ElevesController::class, 'update'])->name('eleves.update');

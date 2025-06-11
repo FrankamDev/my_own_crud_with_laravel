@@ -3,6 +3,12 @@
 @section('content')
 
 <div class="container mt-4">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
     <h2 class="mb-4 text-white">Liste d'etudiants</h2>
     <a href="{{ route('eleves.create') }}" class="btn btn-outline-info mb-3">Add Student</a>
     @session('success')
@@ -32,13 +38,19 @@
                 <td>{{$eleve->name}}</td>
                 <td>{{$eleve->email}}</td>
                 <td>{{$eleve->phone}}</td>
-                <td>
+                <td class="d-flex">
 
 
-                    <a href="{{ route('eleves.show', $eleve->id) }}" class="btn btn-outline-warning">Voir</a>
+                    <a href="{{ route('eleves.show', $eleve->id) }}" class="btn btn-outline-primary">Voir</a>
 
-                    <a href="" class="btn btn-outline-warning">Editer</a>
-                    <a href="" class="btn btn-outline-danger">Supprimer</a>
+                    <a href="{{ route('eleves.edit', $eleve->id) }}" class="btn btn-warning btn-sm">Modifier</a>
+
+                    <form action="{{ route('eleves.destroy', $eleve->id) }}" method="post" >
+                        @csrf
+                        @method('DELETE')
+                         <button type="submit" onclick="return confirm(' Yoo!! veux-tu vraiment supprimer cet eleve ????')" class="btn btn-outline-danger">Supprimer</button>
+                    </form>
+
                 </td>
             </tr>
             @empty
